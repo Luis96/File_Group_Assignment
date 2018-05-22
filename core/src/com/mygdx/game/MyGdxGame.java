@@ -23,6 +23,8 @@ public class MyGdxGame extends ApplicationAdapter
 
 	private void loadData()
 	{
+		//InputStream questionStream = Gdx.files.internal("Assets/Data/GetQuestions.json");
+		//String jsonQuestions = readStream();
 		String jsonQuestions = getJsonData("http://www.json-generator.com/api/json/get/cknCqaXNnS?indent=2\n");
 		String jsonAnswers = getJsonData("http://www.json-generator.com/api/json/get/bUjeqTPtpe?indent=2\n");
 
