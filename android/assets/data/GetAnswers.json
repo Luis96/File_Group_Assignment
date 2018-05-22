@@ -1,0 +1,42 @@
+[
+  {
+    "answer_id": 1,
+    "answer_description": "Answer Description 1",
+    "answer_information": "Answer Information 1",
+    "answer_health": 5.0,
+    "answer_emotion": 1.0,
+    "answer_hygiene": 2.0,
+    "answer_money": -10.0,
+    "answer_strike": -2.0
+  },
+  {
+    "answer_id": 2,
+    "answer_description": "Answer Description 2",
+    "answer_information": "Answer Information 2",
+    "answer_health": 1.0,
+    "answer_emotion": 0.0,
+    "answer_hygiene": 0.0,
+    "answer_money": 5.0,
+    "answer_strike": 1.0
+  },
+  {
+    "answer_id": 3,
+    "answer_description": "Answer Description 3",
+    "answer_information": "Answer Information 3",
+    "answer_health": 4.0,
+    "answer_emotion": 0.0,
+    "answer_hygiene": 0.0,
+    "answer_money": 0.0,
+    "answer_strike": 4.0
+  },
+  {
+    "answer_id": 4,
+    "answer_description": "Answer Description 4",
+    "answer_information": "Answer Information 4",
+    "answer_health": 2.5,
+    "answer_emotion": 1.0,
+    "answer_hygiene": 3.0,
+    "answer_money": 8.0,
+    "answer_strike": -1.0
+  }
+]

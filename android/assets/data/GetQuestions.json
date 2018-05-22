@@ -1,0 +1,72 @@
+[
+  {
+    "question_id": "1",
+    "question_priority": "QUESTION_PRIORITY_MEDIUM",
+    "question_description": "Question Description 1",
+    "question_answers":
+    [
+      1,
+      4
+    ]
+  },
+  {
+    "question_id": "2",
+    "question_priority": "QUESTION_PRIORITY_LOW",
+    "question_description": "Question Description 2",
+    "question_answers":
+    [
+      2,
+      3
+    ]
+  },
+  {
+    "question_id": "3",
+    "question_priority": "QUESTION_PRIORITY_HIGH",
+    "question_description": "Question Description 3",
+    "question_answers":
+    [
+      4
+    ]
+  },
+  {
+    "question_id": "4",
+    "question_priority": "QUESTION_PRIORITY_LOW",
+    "question_description": "Question Description 4",
+    "question_answers":
+    [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "question_id": "5",
+    "question_priority": "QUESTION_PRIORITY_LOW",
+    "question_description": "Question Description 5",
+    "question_answers":
+    [
+      1,
+      4
+    ]
+  },
+  {
+    "question_id": "6",
+    "question_priority": "QUESTION_PRIORITY_MEDIUM",
+    "question_description": "Question Description 6",
+    "question_answers":
+    [
+      2
+    ]
+  },
+  {
+    "question_id": "7",
+    "question_priority": "QUESTION_PRIORITY_MEDIUM",
+    "question_description": "Question Description 7",
+    "question_answers":
+    [
+      3,
+      4
+    ]
+  }
+]
