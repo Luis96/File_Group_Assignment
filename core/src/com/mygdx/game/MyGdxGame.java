@@ -1,14 +1,14 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.google.gson.Gson;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.awt.Button;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -16,23 +16,28 @@ import java.util.List;
 
 public class MyGdxGame extends ApplicationAdapter
 {
+	private Button button;
+	private TextureAtlas buttonTexture;
+	private Skin buttonSkin;
+	private Stage stage;
+
 	public void create()
 	{
+		setResources();
+		
 		loadData();
 	}
 
 	private void loadData()
 	{
-		//InputStream questionStream = Gdx.files.internal("Assets/Data/GetQuestions.json");
-		//String jsonQuestions = readStream();
-		String jsonQuestions = getJsonData("http://www.json-generator.com/api/json/get/cknCqaXNnS?indent=2\n");
-		String jsonAnswers = getJsonData("http://www.json-generator.com/api/json/get/bUjeqTPtpe?indent=2\n");
+		FileHandle questionsFileName = Gdx.files.internal("data/GetQuestions.json");
+		FileHandle answersFileName = Gdx.files.internal("data/GetAnswers.json");
 
-		System.out.println("Question List: " + jsonQuestions);
-		System.out.println("Answer List: " + jsonAnswers);
+		String questionFileToRead = questionsFileName.readString();
+		String answerFileToRead = answersFileName.readString();
 
-		Question[] questionArray = new Gson().fromJson(jsonQuestions, Question[].class);
-		Answer[] answerArray = new Gson().fromJson(jsonAnswers, Answer[].class);
+		Question[] questionArray = new Gson().fromJson(questionFileToRead, Question[].class);
+		Answer[] answerArray = new Gson().fromJson(answerFileToRead, Answer[].class);
 
 		Singleton.getInstance().setQuestions(questionArray);
 		Singleton.getInstance().setAnswers(answerArray);
@@ -74,48 +79,10 @@ public class MyGdxGame extends ApplicationAdapter
 		}
 	}
 
-	private String getJsonData(final String urlLocation)
+	private void setResources()
 	{
-		HttpURLConnection connection = null;
+		stage = new Stage();
 
-		try
-		{
-			URL url = new URL(urlLocation);
-
-			connection = (HttpURLConnection) url.openConnection();
-
-			return readStream(connection.getInputStream());
-		}
-		catch(Exception exception)
-		{
-			exception.printStackTrace();
-		}
-		finally
-		{
-			connection.disconnect();
-		}
-
-		return null;
-	}
-
-	private String readStream(InputStream inputStream)
-	{
-		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-		StringBuilder getData = new StringBuilder();
-		String readLine = null;
-
-		try
-		{
-			while((readLine = bufferedReader.readLine()) != null)
-			{
-				getData.append(readLine).append('\n');
-			}
-		}
-		catch(IOException exception)
-		{
-			exception.printStackTrace();
-		}
-
-		return getData.toString();
+		buttonSkin = new Skin();
 	}
 }
