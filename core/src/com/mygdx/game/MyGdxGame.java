@@ -24,7 +24,7 @@ public class MyGdxGame extends ApplicationAdapter
 	public void create()
 	{
 		setResources();
-		
+
 		loadData();
 	}
 
